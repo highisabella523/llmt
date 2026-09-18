@@ -1,0 +1,5 @@
+:{$PORT} {
+ @httpupgrade path /hup*
+ reverse_proxy @httpupgrade 127.0.0.1:10000 { transport http { versions 1.1 } }
+ reverse_proxy 127.0.0.1:8081
+}
